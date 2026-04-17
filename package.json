@@ -1,0 +1,21 @@
+{
+  "name": "localserver",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "author": "Omar-55x",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "date-fns": "^2.23.0",
+    "express": "^5.2.1",
+    "mongoose": "^9.4.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
