@@ -16,12 +16,12 @@ app.use(reqLogger);
 app.use(express.urlencoded({ extended: true }));
 app.use(cors(corsOptions));
 app.use(express.json());
-
-// Serving static files
-app.use('/', express.static(path.join(__dirname, 'public')))
+app.use('/', express.static(path.join(__dirname, 'public')));
 
 // Managing Routes
 app.use('/', require('./routes/root'));
+app.use('/register', require('./routes/register'));
+app.use('/auth', require('./routes/auth'));
 app.use('/api/employees', require('./routes/api/employees'));
 app.use('/api/users', require('./routes/api/users'));
 
