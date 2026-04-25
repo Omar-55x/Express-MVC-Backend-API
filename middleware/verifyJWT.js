@@ -2,8 +2,8 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
 const verifyJWT = (req, res, next) => {
-    const authHeader = req.headers.authroization || req.headers.Authorization;
-    if (!authHeader?.satrtsWith('Bearer ')) return res.sendStatus(401);
+    const authHeader = req.headers.authorization || req.headers.Authorization;
+    if (!authHeader?.startsWith('Bearer ')) return res.sendStatus(401);
     const token = authHeader.split(' ')[1];        // Bearer + ' ' + token
 
     jwt.verify(
@@ -12,7 +12,7 @@ const verifyJWT = (req, res, next) => {
         (err, decoded) => {
             if (err) return res.sendStatus(403);        // Forbidden - inavlid token
             req.user = decoded.userInfo.username;
-            req.role = decoded.userInfo.roles;
+            req.roles = decoded.userInfo.roles;
             next();
         }
     );

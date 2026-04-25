@@ -3,8 +3,8 @@ const verifyRoles = (...allowedRoles) => {
         if (!req?.roles) return res.sendStatus(401);
         const rolesArr = [...allowedRoles];
         const result = req.roles.map(role => rolesArr.includes(role)).find((val => val === true));
-        if (!result) return sendStatus(401);
-        nrxt();
+        if (!result) return res.sendStatus(401);
+        next();
     }
 };
 
