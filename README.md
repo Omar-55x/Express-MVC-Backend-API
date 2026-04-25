@@ -9,5 +9,5 @@ A backend API built with Express.js following the MVC architecture. I have bulit
 - MVC | Organized the code in Model-View-Controller pattern for better scalability and maintainability
 - REST | Built a REST API endpoints for performing CRUD operations across application resources
 - API Testing | Tested APIs using tools like Thunder Client to ensure functionality
-- Authentication (JWT) | Implemented secure authentication using access and refresh tokens, with controllers for login, logout, and token refresh flows
+- JWT Authentication & RBAC | Implemented secure JWT authentication and role-based authorization, with middleware enforcing access control across protected routes
 - MongoDB | Integrated MongoDB through Mongoose to model data schemas
