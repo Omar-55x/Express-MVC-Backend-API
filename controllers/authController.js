@@ -6,7 +6,7 @@ const path = require('path');
 const fsPromises = require('fs').promises;
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-require('dotenv').config();
+
 
 const handleLogin = async (req, res) => {
     const { user, pwd } = req.body;
