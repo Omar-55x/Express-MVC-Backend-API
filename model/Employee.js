@@ -9,7 +9,6 @@ const empSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    age: Number
-});
+}, { timestamps: true });
 
 module.exports = mongoose.model('Employee', empSchema);
