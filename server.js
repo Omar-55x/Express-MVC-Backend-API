@@ -10,10 +10,11 @@ const corsOptions = require('./config/corsOptions');
 const verifyJWT = require('./middleware/verifyJWT');
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
+const connectDB = require('./config/dbConnection');
 
 const PORT = 3500;
 
-mongoose.connect('mongodb://127.0.0.1:27017/myCompany');
+connectDB();
 
 // Adding Middleware
 app.use(reqLogger);
