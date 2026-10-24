@@ -1,6 +1,6 @@
-# Express MVC Backend API
+# Employee Management API
 
-A backend API built with Express.js following the MVC architecture. I have bulit and still bulding on this server to learn and strengthen backend development concepts.
+A backend API built with Express.js following the MVC architecture
 
 ## Features & Concepts Practiced
 
@@ -11,3 +11,4 @@ A backend API built with Express.js following the MVC architecture. I have bulit
 - API Testing | Tested APIs using tools like Thunder Client to ensure functionality
 - JWT Authentication & RBAC | Implemented secure JWT authentication and role-based authorization, with middleware enforcing access control across protected routes
 - MongoDB | Integrated MongoDB through Mongoose to model data schemas
+- Docker | Containerized the API and MongoDB using Docker Compose
