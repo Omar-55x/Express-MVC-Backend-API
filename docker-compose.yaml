@@ -1,0 +1,40 @@
+services:
+  api:
+    build: .
+    image: express-api:1.0.0
+    env_file:
+      - .env
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/myCompany
+    networks:
+      - node-app
+    ports:
+      - "3500:3500"
+    depends_on:
+      mongo:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3500/health').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  mongo:
+    image: mongo:8.2.12-noble
+    networks:
+      - node-app
+    volumes:
+      - mongo-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  mongo-data:
+
+networks:
+  node-app:
