@@ -10,6 +10,9 @@ RUN --mount=type=cache,target=/usr/src/app/.npm \
     npm set cache /usr/src/app/.npm && \
     npm ci --only=production
 
+RUN mkdir -p /usr/src/app/logs && \
+    chown node:node /usr/src/app/logs
+
 USER node
 
 COPY --chown=node:node . .
